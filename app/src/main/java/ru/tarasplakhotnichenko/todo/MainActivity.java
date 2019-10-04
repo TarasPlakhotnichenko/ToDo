@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyItemInserted(this.items.size() - 1);
     }
 
+    public  void delete(View v){
+        //this.items.remove(this.items.get());
+        //this.adapter.notifyItemRemoved(this.items.size() - 1);
+        this.adapter.notifyItemRemoved(this.items.size() - 1);
+    }
+
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
 
@@ -65,16 +71,22 @@ public class MainActivity extends AppCompatActivity {
 
             //---------------------------------------------------------------------
             Button deleteButton = holder.itemView.findViewById(R.id.delete);
-                //delete = (Button) holder.itemView.findViewById(R.id.delete);
-            View.OnClickListener deleteItem = new View.OnClickListener() {
+            deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    //name.remove
-
+                   //this.items.remove(this.items.get(index));
+                   //this.adapter.notifyItemRemoved(this.items.size() - 1);
                 }
-            };
-            deleteButton.setOnClickListener(deleteItem);
+            });
+            //View.OnClickListener deleteItem = new View.OnClickListener() {
+             //   @Override
+             //   public void onClick(View v) {
+
+                    //adapter.notifyItemInserted(this.items.size() - 1);
+                    //this.adapter.notifyItemRemoved(this.items.size() - 1);
+            //    }
+            //};
+            //deleteButton.setOnClickListener(deleteItem);
             //---------------------------------------------------------------------
 
             name.setText(String.format("%s. %s", index, this.items.get(index).getName()));
