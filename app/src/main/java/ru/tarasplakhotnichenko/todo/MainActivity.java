@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 //import android.support.v7.widget.LinearLayoutManager;
 //import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Switch;
 
 import android.os.Bundle;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recycler = findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
+
+
         recycler.setAdapter(adapter);
     }
 
@@ -46,9 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
+        //private final RecyclerView.Adapter adapter;
 
-        public ItemAdapter(List<Item> items) {
+        public ItemAdapter(List<Item> items)  {
             this.items = items;
+            //this.adapter = adapter;
         }
 
         @NonNull
@@ -83,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
             return this.items.size();
         }
 
-
-        public  void delete(int i){
+        public  void delete(int i) {
             this.items.remove(this.items.get(i));
-            //this.adapter.notifyItemRemoved(this.items.size() - 1);
+            notifyItemRemoved(i);
+            notifyItemRangeChanged(i, items.size());
         }
     }
 }
