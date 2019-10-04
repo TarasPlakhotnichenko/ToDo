@@ -43,11 +43,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyItemInserted(this.items.size() - 1);
     }
 
-    public  void delete(View v){
-        //this.items.remove(this.items.get());
-        //this.adapter.notifyItemRemoved(this.items.size() - 1);
-        this.adapter.notifyItemRemoved(this.items.size() - 1);
-    }
 
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
@@ -66,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int index) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int index) {
             TextView name = holder.itemView.findViewById(R.id.name);
 
             //---------------------------------------------------------------------
@@ -74,19 +69,10 @@ public class MainActivity extends AppCompatActivity {
             deleteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                   //this.items.remove(this.items.get(index));
-                   //this.adapter.notifyItemRemoved(this.items.size() - 1);
+                    delete(index);
                 }
             });
-            //View.OnClickListener deleteItem = new View.OnClickListener() {
-             //   @Override
-             //   public void onClick(View v) {
 
-                    //adapter.notifyItemInserted(this.items.size() - 1);
-                    //this.adapter.notifyItemRemoved(this.items.size() - 1);
-            //    }
-            //};
-            //deleteButton.setOnClickListener(deleteItem);
             //---------------------------------------------------------------------
 
             name.setText(String.format("%s. %s", index, this.items.get(index).getName()));
@@ -95,7 +81,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getItemCount() {
             return this.items.size();
+        }
 
+
+        public  void delete(int i){
+            this.items.remove(this.items.get(i));
+            //this.adapter.notifyItemRemoved(this.items.size() - 1);
         }
     }
 }
