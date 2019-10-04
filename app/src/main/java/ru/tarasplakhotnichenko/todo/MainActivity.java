@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 //import android.support.v7.app.AppCompatActivity;
 //import android.support.v7.widget.LinearLayoutManager;
 //import android.support.v7.widget.RecyclerView;
+import android.widget.Button;
 import android.widget.Switch;
 
 import android.os.Bundle;
@@ -61,6 +62,21 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int index) {
             TextView name = holder.itemView.findViewById(R.id.name);
+
+            //---------------------------------------------------------------------
+            Button deleteButton = holder.itemView.findViewById(R.id.delete);
+                //delete = (Button) holder.itemView.findViewById(R.id.delete);
+            View.OnClickListener deleteItem = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    //name.remove
+
+                }
+            };
+            deleteButton.setOnClickListener(deleteItem);
+            //---------------------------------------------------------------------
+
             name.setText(String.format("%s. %s", index, this.items.get(index).getName()));
         }
 
