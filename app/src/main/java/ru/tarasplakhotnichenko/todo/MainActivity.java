@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     private final List<Item> items = new ArrayList<>();
     private final RecyclerView.Adapter adapter = new ItemAdapter(this.items);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +26,13 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recycler = findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
-
-
         recycler.setAdapter(adapter);
     }
 
     public void add(View view) {
         EditText edit = this.findViewById(R.id.editText);
         this.items.add(new Item(edit.getText().toString()));
+
         edit.setText("");
         adapter.notifyItemInserted(this.items.size() - 1);
     }
@@ -42,11 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
-        //private final RecyclerView.Adapter adapter;
 
         public ItemAdapter(List<Item> items)  {
             this.items = items;
-            //this.adapter = adapter;
         }
 
         @NonNull
