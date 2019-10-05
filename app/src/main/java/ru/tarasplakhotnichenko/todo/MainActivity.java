@@ -16,7 +16,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private final List<Item> items = new ArrayList<>();
-    private final RecyclerView.Adapter adapter = new ItemAdapter(this.items);;
+    private final RecyclerView.Adapter adapter = new ItemAdapter(this.items);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
