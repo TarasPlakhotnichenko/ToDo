@@ -77,20 +77,10 @@ public class MainActivity extends AppCompatActivity {
             done.setOnCheckedChangeListener((view, checked) -> {
                 item.setDone(checked);
                 TextView achieved  = holder.itemView.findViewById(R.id.completion);
-                achieved.setText(" -  completed");
+                item.setCreated(Calendar.getInstance());
+                achieved.setText(" -  completed" + " " + format(item.getCreated()));
 
-                //item.setCreated(Calendar.getInstance());
-                //achieved.setText(" -  completed" + " " + format(Calendar.getInstance()));
             } );
-
-
-             //String.valueOf(item.isDone())
-             //if (item.isDone()) {
-                 //TextView achieved  = holder.itemView.findViewById(R.id.achieved);
-                 //achieved.setText(String.valueOf(item.isDone()));
-
-             //}
-
 
             //---------------------------------------------------------------------
             /*
