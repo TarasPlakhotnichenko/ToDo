@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
             return String.format(
 
                     Locale.getDefault(), "%02d.%02d.%d",
-                    //Locale.getDefault(), "%td.%td.%Y",
                     cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH),cal.get(Calendar.YEAR)
             );
         }
