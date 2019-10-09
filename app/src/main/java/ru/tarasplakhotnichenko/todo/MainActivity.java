@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.widget.Button;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,10 +71,12 @@ public class MainActivity extends AppCompatActivity {
             CheckBox done = holder.itemView.findViewById(R.id.done);
             done.setOnCheckedChangeListener((view, checked) ->  item.setDone(checked));
 
-             if (item.isDone()) {
-                 done.setText("achieved");
+             //String.valueOf(item.isDone())
+             //if (item.isDone()) {
+                 TextView achieved  = holder.itemView.findViewById(R.id.achieved);
+                 achieved.setText(String.valueOf(item.isDone()));
 
-             }
+             //}
             //---------------------------------------------------------------------
             /*
             Button deleteButton = holder.itemView.findViewById(R.id.delete);
