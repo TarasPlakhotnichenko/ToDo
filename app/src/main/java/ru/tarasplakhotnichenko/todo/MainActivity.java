@@ -63,18 +63,12 @@ public class MainActivity extends AppCompatActivity {
             TextView created = holder.itemView.findViewById(R.id.created);
             Item item = this.items.get(index);
             name.setText(String.format("%s. %s", index, item.getName()));
+
+            //created.setText(format(item.getCreated()));
             created.setText(format(item.getCreated()));
 
             CheckBox done = holder.itemView.findViewById(R.id.done);
-            done.setOnCheckedChangeListener((view, checked) item.setDone(checked));
-
-            private String format(Calendar cal) {
-                return String.format(
-                        Locale.getDefault(), "%02d.%02d.%d",
-                        cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH),cal.get(Calendar.YEAR)
-                );
-            }
-
+            done.setOnCheckedChangeListener((view, checked) ->  item.setDone(checked));
             //---------------------------------------------------------------------
             /*
             Button deleteButton = holder.itemView.findViewById(R.id.delete);
@@ -89,6 +83,13 @@ public class MainActivity extends AppCompatActivity {
             //---------------------------------------------------------------------
 
 
+        }
+
+        private String format(Calendar cal) {
+            return String.format(
+                    Locale.getDefault(), "%02d.%02d.%d",
+                    cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH),cal.get(Calendar.YEAR)
+            );
         }
 
         @Override
