@@ -69,7 +69,12 @@ public class MainActivity extends AppCompatActivity {
             //Item date
             created.setText(format(item.getCreated()));
             CheckBox done = holder.itemView.findViewById(R.id.done);
-            done.setOnCheckedChangeListener((view, checked) ->  item.setDone(checked));
+            done.setOnCheckedChangeListener((view, checked) -> {
+                item.setDone(checked);
+                TextView achieved  = holder.itemView.findViewById(R.id.achieved);
+                achieved.setText("achieved");
+            } );
+
 
              //String.valueOf(item.isDone())
              //if (item.isDone()) {
