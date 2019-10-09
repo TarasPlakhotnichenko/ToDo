@@ -82,18 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
             } );
 
-            //---------------------------------------------------------------------
-            /*
-            Button deleteButton = holder.itemView.findViewById(R.id.delete);
-            deleteButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    delete(index);
-                }
-            });
-            name.setText(String.format("%s. %s", index, this.items.get(index).getName()));
-             */
-            //---------------------------------------------------------------------
         }
 
         private String format(Calendar cal) {
@@ -112,13 +100,5 @@ public class MainActivity extends AppCompatActivity {
             return this.items.size();
         }
 
-        /*
-        public  void delete(int i) {
-            this.items.remove(this.items.get(i));
-            notifyItemRemoved(i);
-            notifyItemRangeChanged(i, items.size());
-        }
-
-        */
     }
 }
