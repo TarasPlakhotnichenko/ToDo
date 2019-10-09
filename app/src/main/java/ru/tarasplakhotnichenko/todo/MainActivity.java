@@ -39,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyItemInserted(this.items.size() - 1);
     }
 
-    public void updateItem(List<Item> items, int i) {
-        //int index = i;
-        //this.items.index();
-    }
 
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
