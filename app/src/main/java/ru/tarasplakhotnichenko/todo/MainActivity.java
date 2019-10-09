@@ -71,17 +71,19 @@ public class MainActivity extends AppCompatActivity {
             CheckBox done = holder.itemView.findViewById(R.id.done);
             done.setOnCheckedChangeListener((view, checked) -> {
                 item.setDone(checked);
-                TextView achieved  = holder.itemView.findViewById(R.id.achieved);
-                achieved.setText("achieved");
+                TextView achieved  = holder.itemView.findViewById(R.id.completion);
+                achieved.setText(" -  completed");
             } );
 
 
              //String.valueOf(item.isDone())
              //if (item.isDone()) {
-                 TextView achieved  = holder.itemView.findViewById(R.id.achieved);
-                 achieved.setText(String.valueOf(item.isDone()));
+                 //TextView achieved  = holder.itemView.findViewById(R.id.achieved);
+                 //achieved.setText(String.valueOf(item.isDone()));
 
              //}
+
+
             //---------------------------------------------------------------------
             /*
             Button deleteButton = holder.itemView.findViewById(R.id.delete);
