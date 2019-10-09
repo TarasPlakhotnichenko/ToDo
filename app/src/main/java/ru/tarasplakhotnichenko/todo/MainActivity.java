@@ -35,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     public void add(View view) {
         EditText edit = this.findViewById(R.id.editText);
         this.items.add(new Item(edit.getText().toString(), Calendar.getInstance()));
-
         edit.setText("");
         adapter.notifyItemInserted(this.items.size() - 1);
     }
 
+    public void updateItem(List<Item> items, int i) {
+        //int index = i;
+        //this.items.index();
+    }
 
     private static final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         private final List<Item> items;
@@ -68,11 +71,16 @@ public class MainActivity extends AppCompatActivity {
 
             //Item date
             created.setText(format(item.getCreated()));
+
+            //Item completion progress
             CheckBox done = holder.itemView.findViewById(R.id.done);
             done.setOnCheckedChangeListener((view, checked) -> {
                 item.setDone(checked);
                 TextView achieved  = holder.itemView.findViewById(R.id.completion);
                 achieved.setText(" -  completed");
+
+                //item.setCreated(Calendar.getInstance());
+                //achieved.setText(" -  completed" + " " + format(Calendar.getInstance()));
             } );
 
 
@@ -100,10 +108,14 @@ public class MainActivity extends AppCompatActivity {
 
         private String format(Calendar cal) {
             return String.format(
+
                     Locale.getDefault(), "%02d.%02d.%d",
+                    //Locale.getDefault(), "%td.%td.%Y",
                     cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH),cal.get(Calendar.YEAR)
             );
         }
+
+
 
         @Override
         public int getItemCount() {
