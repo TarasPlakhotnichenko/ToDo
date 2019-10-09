@@ -33,10 +33,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/done"
+        android:id="@+id/achieved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="60dp"
         app:layout_constraintStart_toEndOf="@+id/created"
         app:layout_constraintTop_toTopOf="@+id/created" />
 
