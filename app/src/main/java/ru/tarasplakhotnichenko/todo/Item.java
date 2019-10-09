@@ -13,21 +13,19 @@ public class Item {
         this.created = created;
     }
 
-    public String getName() {
-        return name;
-    }
+    //item name
+    public String getName() {  return name;   }
+    public void setName(String name) {  this.name = name;  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    //item date
+    public void  setCreated(Calendar created) {this.created = created;}
     public Calendar  getCreated() {return created;}
 
-    public void  setCreated(Calendar created) {this.created = created;}
-
+    //Item achievement
+    public void setDone(boolean done) {this.done = done;}
     public boolean  isDone() { return done; }
 
-    public void setDone(boolean done) {this.done = done;}
+
 
     @Override
     public boolean equals(Object o) {

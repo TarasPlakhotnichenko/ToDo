@@ -61,14 +61,20 @@ public class MainActivity extends AppCompatActivity {
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int index) {
             TextView name = holder.itemView.findViewById(R.id.name);
             TextView created = holder.itemView.findViewById(R.id.created);
+
+            //Item index and name
             Item item = this.items.get(index);
             name.setText(String.format("%s. %s", index, item.getName()));
 
-            //created.setText(format(item.getCreated()));
+            //Item date
             created.setText(format(item.getCreated()));
-
             CheckBox done = holder.itemView.findViewById(R.id.done);
             done.setOnCheckedChangeListener((view, checked) ->  item.setDone(checked));
+
+             if (item.isDone()) {
+                 done.setText("achieved");
+
+             }
             //---------------------------------------------------------------------
             /*
             Button deleteButton = holder.itemView.findViewById(R.id.delete);
@@ -81,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
             name.setText(String.format("%s. %s", index, this.items.get(index).getName()));
              */
             //---------------------------------------------------------------------
-
-
         }
 
         private String format(Calendar cal) {
@@ -97,10 +101,13 @@ public class MainActivity extends AppCompatActivity {
             return this.items.size();
         }
 
+        /*
         public  void delete(int i) {
             this.items.remove(this.items.get(i));
             notifyItemRemoved(i);
             notifyItemRangeChanged(i, items.size());
         }
+
+        */
     }
 }
