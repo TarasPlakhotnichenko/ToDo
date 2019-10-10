@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+ToDo/app/src/main/res/mipmap-anydpi-v26/
+ToDo/app/src/main/res/mipmap-hdpi/
+ToDo/app/src/main/res/mipmap-mdpi/
+ToDo/app/src/main/res/mipmap-xhdpi/
+ToDo/app/src/main/res/mipmap-xxhdpi/
+ToDo/app/src/main/res/mipmap-xxxhdpi/
+ToDo/app/src/main/res/values/
+
+            
