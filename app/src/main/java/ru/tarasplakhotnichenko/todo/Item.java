@@ -7,9 +7,11 @@ public class Item {
     private String name;
     private Calendar created;
     private boolean done;
+    private String desc;
 
-    public Item(String name,  Calendar created) {
+    public Item(String name, String desc,  Calendar created) {
         this.name = name;
+        this.desc = desc;
         this.created = created;
     }
 
@@ -21,9 +23,16 @@ public class Item {
     public void  setCreated(Calendar created) {this.created = created;}
     public Calendar  getCreated() {return created;}
 
+
+    //item description
+    public String getDesc() {  return desc;   }
+    public void setDesc(String desc) {  this.desc = desc;  }
+
     //Item achievement
     public void setDone(boolean done) {this.done = done;}
     public boolean  isDone() { return done; }
+
+
 
     @Override
     public boolean equals(Object o) {

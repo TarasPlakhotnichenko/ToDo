@@ -65,8 +65,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, final int index) {
+
+            //finding all elements in main screen
             TextView name = holder.itemView.findViewById(R.id.name);
             TextView created = holder.itemView.findViewById(R.id.created);
+            TextView desc = holder.itemView.findViewById(R.id.desc);
 
             //Item index and name
             //Item item = this.items.get(index);
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
             //Item date
             created.setText(format(item.getCreated()));
+
+            //Item description
+            desc.setText(String.format("%s", item.getDesc()));
 
             //Item completion progress
             CheckBox done = holder.itemView.findViewById(R.id.done);
