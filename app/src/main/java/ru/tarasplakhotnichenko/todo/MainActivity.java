@@ -80,7 +80,14 @@ public class MainActivity extends AppCompatActivity {
             created.setText(format(item.getCreated()));
 
             //Item description
-            desc.setText(String.format("%s", item.getDesc()));
+            if (item.getDesc().length() > 22) {
+                desc.setText(String.format("%.22s...", item.getDesc()));
+            } else {
+                desc.setText(String.format("%s", item.getDesc()));
+            }
+
+
+
 
             //Item completion progress
             CheckBox done = holder.itemView.findViewById(R.id.done);
