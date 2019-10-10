@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             TextView created = holder.itemView.findViewById(R.id.created);
 
             //Item index and name
-            Item item = this.items.get(index);
+            //Item item = this.items.get(index);
+            Item item = Store.getStore().get(index);
             name.setText(String.format("%s. %s", index, item.getName()));
 
             //Item date
@@ -98,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return this.items.size();
+            //return this.items.size();
+            return Store.getStore().size();
         }
 
     }
