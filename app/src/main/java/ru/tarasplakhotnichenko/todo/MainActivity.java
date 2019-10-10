@@ -1,5 +1,6 @@
 package ru.tarasplakhotnichenko.todo;
 
+import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,18 +26,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         RecyclerView recycler = findViewById(R.id.recycler);
         recycler.setHasFixedSize(true);
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(adapter);
     }
-
+/*
     public void add(View view) {
         EditText edit = this.findViewById(R.id.editText);
         this.items.add(new Item(edit.getText().toString(), Calendar.getInstance()));
         edit.setText("");
         adapter.notifyItemInserted(this.items.size() - 1);
+    }
+
+ */
+
+    public void add(View view) {
+        Intent intent = new Intent(this.getApplicationContext(), AddActivity.class);
+        startActivity(intent);
     }
 
 
