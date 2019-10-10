@@ -25,8 +25,6 @@ public class Item {
     public void setDone(boolean done) {this.done = done;}
     public boolean  isDone() { return done; }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -40,3 +38,5 @@ public class Item {
         return Objects.hash(name);
     }
 }
+
+
