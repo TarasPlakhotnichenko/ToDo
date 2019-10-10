@@ -25,10 +25,6 @@ public class AddActivity extends AppCompatActivity {
         EditText desc = this.findViewById(R.id.desc);
         Store.getStore().add(new Item(edit.getText().toString(), desc.getText().toString(), Calendar.getInstance()));
 
-        //-------------
-        //EditText desc = this.findViewById(R.id.desc);
-        //Store.getStore().add(new Item(desc.getText().toString(), Calendar.getInstance()));
-        //-------------
         Intent intent = new Intent(this.getApplicationContext(), MainActivity.class);
         startActivity(intent);
     }

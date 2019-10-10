@@ -31,15 +31,6 @@ public class MainActivity extends AppCompatActivity {
         recycler.setLayoutManager(new LinearLayoutManager(this));
         recycler.setAdapter(adapter);
     }
-/*
-    public void add(View view) {
-        EditText edit = this.findViewById(R.id.editText);
-        this.items.add(new Item(edit.getText().toString(), Calendar.getInstance()));
-        edit.setText("");
-        adapter.notifyItemInserted(this.items.size() - 1);
-    }
-
- */
 
     public void add(View view) {
         Intent intent = new Intent(this.getApplicationContext(), AddActivity.class);
@@ -72,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             TextView desc = holder.itemView.findViewById(R.id.desc);
 
             //Item index and name
-            //Item item = this.items.get(index);
             Item item = Store.getStore().get(index);
             name.setText(String.format("%s. %s", index, item.getName()));
 
@@ -86,17 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 desc.setText(String.format("%s", item.getDesc()));
             }
 
-
-
-
             //Item completion progress
             CheckBox done = holder.itemView.findViewById(R.id.done);
             done.setOnCheckedChangeListener((view, checked) -> {
                 item.setDone(checked);
-                //TextView achieved  = holder.itemView.findViewById(R.id.completion);
-                //item.setCreated(Calendar.getInstance());
-                //achieved.setText(" -  completed" + " " + format(item.getCreated()));
-
             } );
 
         }
