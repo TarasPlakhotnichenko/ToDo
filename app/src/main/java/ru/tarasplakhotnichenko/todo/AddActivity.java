@@ -19,7 +19,6 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(saved);
         setContentView(R.layout.add);
 
-        //------------------
         int indexEdit = getIntent().getIntExtra("indexEdit", 0);
         boolean intentEditYes = getIntent().getBooleanExtra("indexEditYes", false);
 
@@ -32,7 +31,6 @@ public class AddActivity extends AppCompatActivity {
             TextView desc = this.findViewById(R.id.desc);
             desc.setText(item.getDesc());
         }
-        //------------------
     }
 
     public void save(View view) {

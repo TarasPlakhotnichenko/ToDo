@@ -20,7 +20,6 @@ public class ItemActivity extends AppCompatActivity {
         TextView desc = findViewById(R.id.desc);
         desc.setText(item.getDesc());
 
-        //Mine----------vvv
         TextView editView = findViewById(R.id.editButton);
         editView.setOnClickListener(
                 view -> {
@@ -30,10 +29,6 @@ public class ItemActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
         );
-        //Mine----------^^^
-
-
-        //Intent intent = new Intent(this.getApplicationContext(), AddActivity.class);
 
     }
 }
