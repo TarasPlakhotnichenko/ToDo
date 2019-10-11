@@ -35,7 +35,6 @@ public class ItemActivity extends AppCompatActivity {
 
         //Intent intent = new Intent(this.getApplicationContext(), AddActivity.class);
 
-
     }
 }
 

@@ -38,8 +38,10 @@ public final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         );
         TextView name = holder.itemView.findViewById(R.id.name);
         TextView created = holder.itemView.findViewById(R.id.created);
+
         Item item = Store.getStore().get(index);
         name.setText(String.format("%s. %s", index, item.getName()));
+
         created.setText(format(item.getCreated()));
         CheckBox done = holder.itemView.findViewById(R.id.done);
         done.setOnCheckedChangeListener((view, checked) -> item.setDone(checked));
