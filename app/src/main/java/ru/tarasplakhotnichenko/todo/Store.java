@@ -10,7 +10,7 @@ public class Store {
     private final List<Item> items = new ArrayList<>();
 
     private Store() {
-        items.add(new Item("text", Calendar.getInstance()));
+        //items.add(new Item("text", Calendar.getInstance()));
     }
 
     public static Store getStore() {
