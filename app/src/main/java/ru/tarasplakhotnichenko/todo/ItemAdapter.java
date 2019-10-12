@@ -1,22 +1,20 @@
 package ru.tarasplakhotnichenko.todo;
 
-import android.widget.TextView;
 import android.content.Context;
 import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Locale;
 
-public final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
 
-    public ItemAdapter(Context context) {
-        this.context = context;
-    }
+import static ru.tarasplakhotnichenko.todo.DateFrm.format;
+
+public final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @NonNull
     @Override
@@ -29,35 +27,26 @@ public final class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int index) {
+        TextView name = holder.itemView.findViewById(R.id.name);
         holder.itemView.setOnClickListener(
                 view -> {
-                    Intent intent = new Intent(context, ItemActivity.class);
+                    Intent intent = new Intent(name.getContext(), ViewItemActivity.class);
                     intent.putExtra("index", index);
-                    context.startActivity(intent);
+                    name.getContext().startActivity(intent);
                 }
         );
-        TextView name = holder.itemView.findViewById(R.id.name);
         TextView created = holder.itemView.findViewById(R.id.created);
-
         Item item = Store.getStore().get(index);
         name.setText(String.format("%s. %s", index, item.getName()));
-
         created.setText(format(item.getCreated()));
         CheckBox done = holder.itemView.findViewById(R.id.done);
         done.setOnCheckedChangeListener((view, checked) -> item.setDone(checked));
     }
 
-    private String format(Calendar cal) {
-        return String.format(
-                Locale.getDefault(), "%02d.%02d.%d",
-                cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH), cal.get(Calendar.YEAR)
-        );
-    }
+
 
     @Override
     public int getItemCount() {
         return Store.getStore().size();
     }
-
-
 }
