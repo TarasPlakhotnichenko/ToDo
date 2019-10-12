@@ -9,30 +9,42 @@ public class Item {
     private boolean done;
     private String desc;
 
-    public Item(String name, String desc,  Calendar created) {
+    public Item(String name, Calendar created) {
         this.name = name;
-        this.desc = desc;
         this.created = created;
     }
 
-    //item name
-    public String getName() {  return name;   }
-    public void setName(String name) {  this.name = name;  }
+    public String getName() {
+        return name;
+    }
 
-    //item date
-    public void  setCreated(Calendar created) {this.created = created;}
-    public Calendar  getCreated() {return created;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public Calendar getCreated() {
+        return created;
+    }
 
-    //item description
-    public String getDesc() {  return desc;   }
-    public void setDesc(String desc) {  this.desc = desc;  }
+    public void setCreated(Calendar created) {
+        this.created = created;
+    }
 
-    //Item achievement
-    public void setDone(boolean done) {this.done = done;}
-    public boolean  isDone() { return done; }
+    public boolean isDone() {
+        return done;
+    }
 
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -47,5 +59,4 @@ public class Item {
         return Objects.hash(name);
     }
 }
-
 
