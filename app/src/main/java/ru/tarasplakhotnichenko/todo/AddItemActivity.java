@@ -8,4 +8,3 @@ public class AddItemActivity extends BaseActivity {
         return new AddItemFrg();
     }
 }
-/
