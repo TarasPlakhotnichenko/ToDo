@@ -12,15 +12,14 @@ import androidx.fragment.app.Fragment;
 //
 
 public class ViewFragment1 extends Fragment {
-    /*
-    public static ViewFragment instOf(int index) {
+
+    public static ViewFragment1 instOf(int index) {
         Bundle args = new Bundle();
         args.putInt("index", index);
-        ViewFragment frg = new ViewFragment();
+        ViewFragment1 frg = new ViewFragment1();
         frg.setArguments(args);
         return frg;
     }
-     */
 
 
     @Nullable
