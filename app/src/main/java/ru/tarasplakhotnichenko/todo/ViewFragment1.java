@@ -45,7 +45,7 @@ public class ViewFragment1 extends Fragment {
 
 
     public void toScreen0(View view) {
-        Intent intent = new Intent(getActivity(), ViewFragmentActivity0.class );
+        Intent intent = new Intent(this.getActivity(), ViewFragmentActivity0.class );
         startActivity(intent);
     }
 
