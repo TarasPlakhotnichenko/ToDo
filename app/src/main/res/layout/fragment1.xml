@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/myTextView0"
+        android:id="@+id/myTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -21,10 +21,10 @@
         app:layout_constraintVertical_bias="0.086" />
 
     <Button
-        android:id="@+id/buttonSreen0"
+        android:id="@+id/buttonSreen1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To screen #2"
+        android:text="To screen #1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="60dp" />

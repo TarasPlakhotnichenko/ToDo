@@ -1,6 +1,5 @@
 package ru.tarasplakhotnichenko.todo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +31,7 @@ public class ViewFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment0, container, false);
 
         //to find element within xml file
-        TextView name =  view.findViewById(R.id.myTextView);
+        TextView name =  view.findViewById(R.id.myTextView0);
 
         name.setText("This is a fragment placed on the host layer (host_fragment)");
 
