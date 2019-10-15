@@ -29,13 +29,17 @@ public class ViewFragment1 extends Fragment {
         //parsing xml file
         View view = inflater.inflate(R.layout.fragment1, container, false);
 
+
+        //
+        int index = getArguments().getInt("index", 1);
+
         //we are going to attach a listener  to the button to move to screen0
         Button button1 = view.findViewById(R.id.buttonSreen1);
         button1.setOnClickListener(this::toScreen0);
 
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView1);
-        name.setText("This is the fragment1 placed on the host layer (host_fragment)");
+        name.setText("This is the fragment1 placed on the host layer (host_fragment)\nThis is index: " + index);
 
         return view;
 

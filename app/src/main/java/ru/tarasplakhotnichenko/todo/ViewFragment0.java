@@ -29,6 +29,10 @@ public class ViewFragment0 extends Fragment {
         //parsing xml file
         View view = inflater.inflate(R.layout.fragment0, container, false);
 
+
+        //
+        int index = getArguments().getInt("index", 0);
+
         //we are going to attach a listener  to the button to move to screen1
         Button button0 = view.findViewById(R.id.buttonSreen0);
         button0.setOnClickListener(this::toScreen1);
@@ -36,7 +40,7 @@ public class ViewFragment0 extends Fragment {
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
 
-        name.setText("This is the fragment0 placed on the host layer (host_fragment)");
+        name.setText("This is the fragment0 placed on the host layer (host_fragment)\nThis is index: " + index);
 
         return view;
 
