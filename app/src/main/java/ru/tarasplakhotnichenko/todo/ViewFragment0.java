@@ -1,9 +1,11 @@
 package ru.tarasplakhotnichenko.todo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,14 +23,15 @@ public class ViewFragment0 extends Fragment {
         return frg;
     }
 
-
-
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //parsing xml file
-
         View view = inflater.inflate(R.layout.fragment0, container, false);
+
+        //we are going to attach a listener  to the button to move to screen1
+        Button button0 = view.findViewById(R.id.buttonSreen0);
+        button0.setOnClickListener(btn -> toScreen1());
 
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
@@ -37,6 +40,11 @@ public class ViewFragment0 extends Fragment {
 
         return view;
 
+    }
+
+    public void toScreen1() {
+        Intent intent = new Intent(getActivity(), ViewFragmentActivity1.class );
+        startActivity(intent);
     }
 
 }

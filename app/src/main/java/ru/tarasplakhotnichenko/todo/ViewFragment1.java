@@ -1,9 +1,11 @@
 package ru.tarasplakhotnichenko.todo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,10 +34,22 @@ public class ViewFragment1 extends Fragment {
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
 
+
+        //we are going to attach a listener  to the button to move to screen0
+        Button button0 = view.findViewById(R.id.buttonSreen0);
+        button0.setOnClickListener(btn -> toScreen0());
+
         name.setText("This is a fragment placed on the host layer (host_fragment)");
 
         return view;
 
     }
+
+
+    public void toScreen0() {
+        Intent intent = new Intent(getActivity(), ViewFragmentActivity0.class );
+        startActivity(intent);
+    }
+
 
 }
