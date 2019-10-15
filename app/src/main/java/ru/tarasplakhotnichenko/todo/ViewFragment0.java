@@ -31,8 +31,8 @@ public class ViewFragment0 extends Fragment {
 
         //we are going to attach a listener  to the button to move to screen1
         Button button0 = view.findViewById(R.id.buttonSreen0);
-        //button0.setOnClickListener(btn -> toScreen1(view));
         button0.setOnClickListener(this::toScreen1);
+
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
 
