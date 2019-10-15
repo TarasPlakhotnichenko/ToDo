@@ -29,7 +29,7 @@ public class ViewFragment1 extends Fragment {
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //parsing xml file
 
-        View view = inflater.inflate(R.layout.fragment0, container, false);
+        View view = inflater.inflate(R.layout.fragment1, container, false);
 
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
