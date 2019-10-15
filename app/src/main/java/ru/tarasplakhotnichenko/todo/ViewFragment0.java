@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 //
 
-public class ViewFragment extends Fragment {
+public class ViewFragment0 extends Fragment {
     /*
     public static ViewFragment instOf(int index) {
         Bundle args = new Bundle();
