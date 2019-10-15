@@ -23,20 +23,18 @@ public class ViewFragment1 extends Fragment {
         return frg;
     }
 
-
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //parsing xml file
-
         View view = inflater.inflate(R.layout.fragment1, container, false);
 
         //we are going to attach a listener  to the button to move to screen0
-        Button button0 = view.findViewById(R.id.buttonSreen0);
-        button0.setOnClickListener(this::toScreen0);
+        Button button1 = view.findViewById(R.id.buttonSreen1);
+        button1.setOnClickListener(this::toScreen0);
 
         //to find element within xml file
-        TextView name =  view.findViewById(R.id.myTextView0);
+        TextView name =  view.findViewById(R.id.myTextView1);
         name.setText("This is the fragment1 placed on the host layer (host_fragment)");
 
         return view;
