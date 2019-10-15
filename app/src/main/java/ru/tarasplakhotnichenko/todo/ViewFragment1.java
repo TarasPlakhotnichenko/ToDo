@@ -15,9 +15,9 @@ import androidx.fragment.app.Fragment;
 
 public class ViewFragment1 extends Fragment {
 
-    public static ViewFragment1 instOf(int index) {
+    public static ViewFragment1 instOf() {
         Bundle args = new Bundle();
-        args.putInt("index", index);
+        args.putInt("index", 1);
         ViewFragment1 frg = new ViewFragment1();
         frg.setArguments(args);
         return frg;
@@ -31,7 +31,7 @@ public class ViewFragment1 extends Fragment {
 
 
         //
-        int index = getArguments().getInt("index", 1);
+        int index = getArguments().getInt("index", 0);
 
         //we are going to attach a listener  to the button to move to screen0
         Button button1 = view.findViewById(R.id.buttonSreen1);

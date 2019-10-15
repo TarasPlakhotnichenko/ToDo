@@ -15,9 +15,9 @@ import androidx.fragment.app.Fragment;
 
 public class ViewFragment0 extends Fragment {
 
-    public static ViewFragment0 instOf(int index) {
+    public static ViewFragment0 instOf() {
         Bundle args = new Bundle();
-        args.putInt("index", index);
+        args.putInt("index", 0);
         ViewFragment0 frg = new ViewFragment0();
         frg.setArguments(args);
         return frg;

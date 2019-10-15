@@ -11,7 +11,7 @@ public class ViewFragmentActivity0 extends BaseActivity {
     public Fragment loadFragment() {
         int index = getIntent().getIntExtra("index", 0);
 
-        return ViewFragment0.instOf(index);
+        return ViewFragment0.instOf();
         //return new ViewFragment0();
     }
 }
