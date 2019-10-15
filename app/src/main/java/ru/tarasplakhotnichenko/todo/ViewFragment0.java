@@ -31,18 +31,18 @@ public class ViewFragment0 extends Fragment {
 
         //we are going to attach a listener  to the button to move to screen1
         Button button0 = view.findViewById(R.id.buttonSreen0);
-        button0.setOnClickListener(btn -> toScreen1());
-
+        //button0.setOnClickListener(btn -> toScreen1(view));
+        button0.setOnClickListener(this::toScreen1);
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
 
-        name.setText("This is a fragment placed on the host layer (host_fragment)");
+        name.setText("This is the fragment0 placed on the host layer (host_fragment)");
 
         return view;
 
     }
 
-    public void toScreen1() {
+    public void toScreen1(View view) {
         Intent intent = new Intent(getActivity(), ViewFragmentActivity1.class );
         startActivity(intent);
     }

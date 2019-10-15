@@ -31,22 +31,20 @@ public class ViewFragment1 extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment1, container, false);
 
-        //to find element within xml file
-        TextView name =  view.findViewById(R.id.myTextView0);
-
-
         //we are going to attach a listener  to the button to move to screen0
         Button button0 = view.findViewById(R.id.buttonSreen0);
-        button0.setOnClickListener(btn -> toScreen0());
+        button0.setOnClickListener(this::toScreen0);
 
-        name.setText("This is a fragment placed on the host layer (host_fragment)");
+        //to find element within xml file
+        TextView name =  view.findViewById(R.id.myTextView0);
+        name.setText("This is the fragment1 placed on the host layer (host_fragment)");
 
         return view;
 
     }
 
 
-    public void toScreen0() {
+    public void toScreen0(View view) {
         Intent intent = new Intent(getActivity(), ViewFragmentActivity0.class );
         startActivity(intent);
     }
