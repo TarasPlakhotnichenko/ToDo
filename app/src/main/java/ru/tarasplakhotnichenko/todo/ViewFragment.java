@@ -1,5 +1,6 @@
 package ru.tarasplakhotnichenko.todo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,17 @@ import androidx.fragment.app.Fragment;
 //
 
 public class ViewFragment extends Fragment {
+    /*
+    public static ViewFragment instOf(int index) {
+        Bundle args = new Bundle();
+        args.putInt("index", index);
+        ViewFragment frg = new ViewFragment();
+        frg.setArguments(args);
+        return frg;
+    }
+     */
+
+
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
