@@ -30,7 +30,7 @@ public class ViewFragment1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment1, container, false);
 
 
-        //we get a value from other screen that is the screen #0
+        //we get a value passed from other screen that is the screen #0
         int index = getArguments().getInt("index", 0);
 
         //we are going to attach a listener  to the button to move to screen0
