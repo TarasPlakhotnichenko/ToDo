@@ -26,6 +26,23 @@ public class ViewFragment0 extends Fragment {
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        //----------JUST FOR FUN-------------------------vvv
+        String[]  wordList1 = {"круглосуточный", "трех-звенный", "взаимный", "на основе веб-технологий", "проникающий", "умный", "динамичный", "шесть сигм", "метод критического пути", "как всегда"};
+        String[]  wordList2 = {"чистый продукт", "трудный", "уполномоченный","нестандартный ум","общий","совместный","сетевой","фирменный","ориентированный","нацеленный на","крутой", "получилось"};
+        String[]  wordList3 = {"процесс","образец", "выход из положения", "талант","структура","обзор","пункт разгрузки","пятилетка"};
+        int lenthW1 = wordList1.length;
+        int lenthW2 = wordList2.length;
+        int lenthW3 = wordList3.length;
+        int rnd1 = (int) (Math.random() * lenthW1);
+        int rnd2 = (int) (Math.random() * lenthW2);
+        int rnd3 = (int) (Math.random() * lenthW3);
+        String phrase = wordList1[rnd1] + " " + wordList2[rnd2] + " " + wordList3[rnd3];
+
+        //----------JUST FOR FUN-------------------------^^^
+
+
+
         //parsing xml file
         View view = inflater.inflate(R.layout.fragment0, container, false);
 
@@ -40,7 +57,8 @@ public class ViewFragment0 extends Fragment {
         //to find element within xml file
         TextView name =  view.findViewById(R.id.myTextView0);
 
-        name.setText("This is the fragment0 placed on the host layer (host_fragment)\nThis is index: " + index);
+        //name.setText("This is the fragment0 placed on the host layer (host_fragment)\nThis is index: " + index);
+        name.setText("Все, что нам нужно, - это: "  + phrase);
 
         return view;
 

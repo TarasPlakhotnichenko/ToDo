@@ -26,6 +26,7 @@ public class ViewFragment1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         //parsing xml file
         View view = inflater.inflate(R.layout.fragment1, container, false);
 
